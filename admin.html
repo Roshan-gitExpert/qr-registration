@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login view -->
+  <div class="card" id="loginCard">
+    <h1>Admin Login</h1>
+    <p class="subtitle">Enter your admin credentials to continue.</p>
+
+    <form id="loginForm" autocomplete="off">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <div class="error" id="loginError"></div>
+
+      <button type="submit" id="loginBtn">Log In</button>
+    </form>
+  </div>
+
+  <!-- Dashboard view -->
+  <div class="card wide" id="dashboardCard" style="display:none;">
+    <div class="topbar">
+      <h1>Registrations</h1>
+      <button type="button" class="secondary" id="logoutBtn">Log Out</button>
+    </div>
+
+    <div class="stat" id="countStat">0 registrations</div>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search by name, mobile number or code..." />
+      <button type="button" id="searchBtn">Search</button>
+      <button type="button" class="secondary" id="downloadCsvBtn">Download CSV</button>
+      <button type="button" class="secondary" id="downloadXlsxBtn">Download Excel</button>
+    </div>
+
+    <div class="error" id="dashError"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Mobile</th>
+            <th>Code</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
